@@ -12,6 +12,7 @@ import { ToolbarGroup, ToolbarButton } from '@wordpress/components';
 registerBlockType( 'custom-blocks/coloured-card', {
 	title: __( 'Coloured Card', 'custom-blocks' ),
 	category: 'custom-blocks',
+	icon: 'index-card',
 	attributes: {
 		heading: { type: 'string' },
 		quote: { type: 'string' },
@@ -75,7 +76,7 @@ function EditComponent( props ) {
 						style={ { backgroundColor: props.attributes.color } }
 					>
 						<RichText
-							tagvalue={ props.attributes.heading }
+							value={ props.attributes.heading }
 							onChange={ handleHeadingChange }
 							placeholder={ __(
 								'Card Heading',
@@ -114,16 +115,6 @@ function EditComponent( props ) {
 }
 
 function SaveComponent( props ) {
-	function createTagName() {
-		switch ( props.attributes.size ) {
-			case 'large':
-				return 'h1';
-			case 'medium':
-				return 'h2';
-			case 'small':
-				return 'h3';
-		}
-	}
 	return (
 		<div className="card">
 			<div
@@ -135,7 +126,6 @@ function SaveComponent( props ) {
 			<div className="card-body">
 				<blockquote className="blockquote mb-0">
 					<RichText.Content
-						tagName={ createTagName() }
 						value={ props.attributes.quote }
 					/>
 					<footer className="blockquote-footer">

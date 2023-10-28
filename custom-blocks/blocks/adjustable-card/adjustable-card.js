@@ -6,6 +6,7 @@ import { ToolbarGroup, ToolbarButton } from '@wordpress/components';
 
 registerBlockType( 'custom-blocks/adjustable-card', {
 	title: __( 'Adjustable Card', 'custom-blocks' ),
+	icon: 'index-card',
 	category: 'custom-blocks',
 	attributes: {
 		heading: { type: 'string' },

@@ -44,6 +44,7 @@ function save() {
 registerBlockType( 'custom-blocks/static-card', {
 	title: __( 'Static Card', 'custom-blocks' ),
 	category: 'custom-blocks',
+	icon: 'index-card',
 	edit,
 	save,
 } );

@@ -11,6 +11,7 @@ registerBlockType( 'custom-blocks/editable-card', {
 		quote: { type: 'string' },
 		source: { type: 'string' },
 	},
+	icon: 'index-card',
 	edit: EditComponent,
 	save: SaveComponent,
 } );

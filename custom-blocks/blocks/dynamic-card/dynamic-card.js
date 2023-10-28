@@ -19,6 +19,7 @@ registerBlockType( 'custom-blocks/dynamic-card', {
 		showHeader: { type: 'boolean', default: true },
 		color: { type: 'string' },
 	},
+	icon: 'index-card',
 	edit: EditComponent,
 	save: SaveComponent,
 } );
@@ -75,7 +76,7 @@ function EditComponent( props ) {
 						style={ { backgroundColor: props.attributes.color } }
 					>
 						<RichText
-							tagvalue={ props.attributes.heading }
+							value={ props.attributes.heading }
 							onChange={ handleHeadingChange }
 							placeholder={ __(
 								'Card Heading',

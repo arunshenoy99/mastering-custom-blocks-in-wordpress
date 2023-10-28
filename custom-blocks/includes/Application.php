@@ -56,6 +56,21 @@ class Application {
 	}
 
 	/**
+	 * Adds our namespace to the registered block categories.
+	 *
+	 * @param array $categories Registered block categories.
+	 * @return array
+	 */
+	public function add_block_category( $categories ) {
+		$categories[] = array(
+			'slug'  => Blocks::get_namespace(),
+			'title' => Blocks::get_title(),
+		);
+
+		return $categories;
+	}
+
+	/**
 	 * Registers all our enabled blocks. See Data/Blocks.php for enabled blocks.
 	 *
 	 * @return void
@@ -75,20 +90,6 @@ class Application {
 		}
 	}
 
-	/**
-	 * Adds our namespace to the registered block categories.
-	 *
-	 * @param array $categories Registered block categories.
-	 * @return array
-	 */
-	public function add_block_category( $categories ) {
-		$categories[] = array(
-			'slug'  => Blocks::get_namespace(),
-			'title' => Blocks::get_title(),
-		);
-
-		return $categories;
-	}
 }
 
 // Initialize the application.
